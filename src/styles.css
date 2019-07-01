@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.date {
+    color: grey;
+}
+
+.userName {
+    color: dodgerblue;
+}
+
+.content {
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(30deg, #00C9FF 0%, #92FE9D 100%);
+    border-radius: 4px;
+}
+
+body {
+    background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #ffffff;
+}

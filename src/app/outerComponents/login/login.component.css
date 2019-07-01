@@ -1,0 +1,44 @@
+.container {
+    height: 40vh;
+    width: 40vw;
+    border-radius: 4px;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.3);
+    list-style: none;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+a {
+    transition: background-color 2s ease;
+    text-align: center;
+    height: 40px;
+    font-size: 1.5rem;
+    line-height: 40px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: #ffffff;
+    display:block;
+}
+
+a:hover {
+    
+    background-color: #00C9FF
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}

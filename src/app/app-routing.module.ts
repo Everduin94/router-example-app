@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './appComponents/page-not-found/page-not-found.component';
-import { LoginComponent } from './appComponents/login/login.component';
-import { ShellComponent } from './appComponents/header/shell.component';
-import { MainComponent } from './appComponents/main/main.component';
+import { PageNotFoundComponent } from './outerComponents/page-not-found/page-not-found.component';
+import { LoginComponent } from './outerComponents/login/login.component';
+import { ShellComponent } from './outerComponents/shell/shell.component';
+import { FeedComponent } from './innerComponents/feed/feed.component';
 
 const routes: Routes = [
   {
@@ -11,16 +11,22 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       {
-        path: 'home',
-        component: MainComponent,
-        children: [
-          {
-            path: 'examples',
-            loadChildren: () => import('./featureComponents/examples/examples.module').then(mod => mod.ExamplesModule),
-          },
-        ]
+        path: 'feed',
+        component: FeedComponent
       },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      {
+        path: 'messages',
+        loadChildren: () => import('./innerComponents/messages/messages.module').then(mod => mod.MessagesModule),
+      },
+      {
+        path: 'notifications',
+        loadChildren: () => import('./innerComponents/notifications/notifications.module').then(mod => mod.NotificationsModule),
+      },
+      {
+        path: 'moments',
+        loadChildren: () => import('./innerComponents/moments/moments.module').then(mod => mod.MomentsModule),
+      },
+      { path: '', redirectTo: 'feed', pathMatch: 'full' },
     ]
   },
   { path: 'login', component: LoginComponent },

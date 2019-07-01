@@ -1,0 +1,13 @@
+<div class="container">
+  <router-outlet></router-outlet>
+  <ul *ngIf="messages$ | async as messages">
+    <li class="item" *ngFor="let message of messages">
+      <a routerLinkActive="active" [routerLink]="['/messages', message.index]">
+        <span class="userName">@{{message.userName}}</span> <span class="date">{{message.date | date:'short'}}</span>
+        <div class="content">
+          {{message.content}}
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <ul *ngIf="moments$ | async as moments">
+    <li class="item" *ngFor="let moment of moments">
+      <div class="content">
+        <img [src]="moment.image" width=300>
+      </div>
+    </li>
+  </ul>
+</div>

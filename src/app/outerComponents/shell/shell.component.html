@@ -1,0 +1,32 @@
+<nav>
+    <ul class="left">
+        <li>
+            <a [routerLink]="['/feed']" routerLinkActive="active">
+                <fa-icon [icon]="home"></fa-icon> Home
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/messages']" routerLinkActive="active">
+                <fa-icon [icon]="envelope"></fa-icon> Messages
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/moments']" routerLinkActive="active">
+                <fa-icon [icon]="bolt"></fa-icon> Moments
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/notifications']" routerLinkActive="active">
+                <fa-icon [icon]="bell"></fa-icon> Notifications
+            </a>
+        </li>
+    </ul>
+
+    <ul class="right">
+        <li>
+            <fa-icon [icon]="door"></fa-icon><a [routerLink]="['/login']">Logout</a>
+        </li>
+    </ul>
+
+</nav>
+<router-outlet></router-outlet>

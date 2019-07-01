@@ -11,11 +11,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
-import { PageNotFoundComponent } from './appComponents/page-not-found/page-not-found.component';
-import { LoginComponent } from './appComponents/login/login.component';
-import { ShellComponent } from './appComponents/header/shell.component';
-import { MainComponent } from './appComponents/main/main.component';
+import { PageNotFoundComponent } from './outerComponents/page-not-found/page-not-found.component';
+import { LoginComponent } from './outerComponents/login/login.component';
+import { ShellComponent } from './outerComponents/shell/shell.component';
+import { MainComponent } from './outerComponents/main/main.component';
 import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
+import { FeedComponent } from './innerComponents/feed/feed.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { MomentsComponent } from './innerComponents/moments/moments.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +27,18 @@ import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
     LoginComponent,
     ShellComponent,
     MainComponent,
-    MdToHtmlPipe
+    MdToHtmlPipe,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
