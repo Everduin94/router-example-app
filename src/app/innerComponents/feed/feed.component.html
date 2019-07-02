@@ -1,6 +1,6 @@
 <div class="container">
   <ul *ngIf="statuses$ | async as statuses">
-    <li class="item" *ngFor="let status of statuses">  
+    <li class="item" [ngClass]="{'show': show}" *ngFor="let status of statuses">  
       <div>
         <span class="userName">@{{status.userName}}</span>  <span class="date">{{status.date | date:'short'}}</span>
       

@@ -10,11 +10,15 @@ import { tap } from 'rxjs/operators';
 export class MomentsComponent implements OnInit {
 
   moments$;
+  show = false;
 
   constructor(private fs: FakerService) { }
 
   ngOnInit() {
-    this.moments$ = this.fs.getMoments().pipe(tap(console.log));
+    this.moments$ = this.fs.getMoments();
+    setTimeout(() => {
+      this.show = true;  
+    }, 10);
   }
 
 }

@@ -9,6 +9,7 @@ import { FakerService } from 'src/app/services/faker.service';
 export class FeedComponent implements OnInit {
 
   statuses$;
+  show = false;
 
   constructor(private fs: FakerService) {
 
@@ -16,7 +17,10 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
       this.statuses$ = this.fs.getFeed();
-      this.statuses$.subscribe(val => console.log('emit'))
+      setTimeout(() => {
+        this.show = true;  
+      }, 10);
+      
   }
 
 }

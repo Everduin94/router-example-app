@@ -1,6 +1,6 @@
 <div class="container">
   <ul *ngIf="notifications$ | async as notifications">
-    <li class="item" *ngFor="let notification of notifications">
+    <li class="item" [ngClass]="{'show': show}" *ngFor="let notification of notifications">
       <span class="userName">@{{notification.userName}}</span> 
       <div class="content">
         💖
