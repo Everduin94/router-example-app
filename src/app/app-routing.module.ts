@@ -4,6 +4,7 @@ import { PageNotFoundComponent } from './outerComponents/page-not-found/page-not
 import { LoginComponent } from './outerComponents/login/login.component';
 import { ShellComponent } from './outerComponents/shell/shell.component';
 import { FeedComponent } from './innerComponents/feed/feed.component';
+import { CustomPreloaderStrategy } from './custom-preloader-strategy';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       {
         path: 'notifications',
         loadChildren: () => import('./innerComponents/notifications/notifications.module').then(mod => mod.NotificationsModule),
+        data: { preload: true }
       },
       {
         path: 'moments',
@@ -34,7 +36,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloaderStrategy})],
+  exports: [RouterModule],
+  providers: [CustomPreloaderStrategy]
 })
 export class AppRoutingModule { }
