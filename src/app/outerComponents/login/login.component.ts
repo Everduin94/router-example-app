@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons/faBolt';
 
 @Component({
   selector: 'app-login',

@@ -18,7 +18,7 @@ export class MessageDetailComponent implements OnInit {
     this.singleMessage$ = this.route.paramMap.pipe(
       switchMap(params => {
         const id = params.get('id');
-        return this.fs.messageCache$.pipe(map(val => val[+id - 1]), tap(console.log))
+        return this.fs.messageCache$.pipe(map(val => val[+id - 1]))
       })
     );
   }

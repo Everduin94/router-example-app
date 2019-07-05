@@ -21,7 +21,6 @@ export class FakerService {
   getFeed() {
     if (this.feedCache$) return this.feedCache$;
 
-    console.log(this.faker);
     const dataArray = [];
     for (let index = 1; index < 25; index++) {
       const userName = this.faker.internet.userName();
@@ -32,7 +31,6 @@ export class FakerService {
     }
 
     this.feedCache$ = of(dataArray);
-    console.log(this.feedCache$)
     return this.feedCache$
   }
 
